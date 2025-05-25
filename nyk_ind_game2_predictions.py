@@ -94,6 +94,11 @@ print("For the 2025 Eastern Conference Finals between the New York Knicks and th
 print(f"New York Knicks Chance of Winning: {round(knicks_chance *100, 3)}%")
 print(f"Indiana Pacers Chance of Winning: {round(pacers_chance *100, 3)}%")
 
+''' For the 2025 Eastern Conference Finals between the New York Knicks and the Indiana Pacers, here are each team's chance of winning Game 2:  
+New York Knicks Chance of Winning: 48.649%
+Indiana Pacers Chance of Winning: 51.351%
+'''
+
 sns.set_theme(style="whitegrid")
 
 knicks_recent = knicks2025_sorted.tail(13).copy()
