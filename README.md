@@ -55,7 +55,7 @@ Each file predicts the outcome of one game. Just run in it in your own terminal!
 
 ## ⚙️ Tech Stack
 
-  - Python 🐍
+  - Python 
   - nba_api for game data
   - scikit-learn for model building
   - pandas / numpy for data wrangling
