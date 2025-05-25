@@ -90,9 +90,14 @@ knicks_chance = knicksProb/totalPercent
 
 pacers_chance = pacersProb/totalPercent
 
-print("For the 2025 Eastern Confrence Finals between the New York Knicks and the Indiana Pacers, here are each team's chance of winning Game 1:  ")
+print("For the 2025 Eastern Conference Finals between the New York Knicks and the Indiana Pacers, here are each team's chance of winning Game 1:  ")
 print(f"New York Knicks Chance of Winning: {round(knicks_chance *100, 3)}%")
 print(f"Indiana Pacers Chance of Winning: {round(pacers_chance *100, 3)}%")
+
+
+#For the 2025 Eastern Conference Finals between the New York Knicks and the Indiana Pacers, here are each team's chance of winning Game 1:  
+#New York Knicks Chance of Winning: 49.733%
+#Indiana Pacers Chance of Winning: 50.267%
 
 sns.set_theme(style="whitegrid")
 
