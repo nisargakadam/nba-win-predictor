@@ -1,73 +1,91 @@
-## Predicting NBA Playoff Wins with Machine Learning 🏀📊
-
-# 🏀 NBA Game Win Predictor
+# 🏀 NBA Game Win Predictor: ECF Edition  
+### *"Predicting Playoff Outcomes, One Game at a Time"*
 
 Ever watched tip-off and wondered: *"Who's actually going to win this?"*  
-This project answers that question using machine learning + NBA stats to predict game outcomes—one matchup at a time.
+This project uses real-time NBA data and machine learning to predict the outcome of **each Eastern Conference Finals game** between the **New York Knicks** and the **Indiana Pacers**.
 
+> 📈 *Final result: 66.7% accuracy across 6 Eastern Conference Finals games — not bad for first time NBA predictions!*
 ---
 
 ## 📦 What This Repo Contains
 
-This repo holds **individual prediction files** for specific NBA games. Each `.py` file:
-- Pulls the latest season stats using [`nba_api`](https://github.com/swar/nba_api)
-- Calculates each team’s recent average performance (FG%, REB, AST, etc.)
-- Trains a `RandomForestClassifier` for each team to model win probability
-- Normalizes both predictions to output a clean head-to-head chance of winning
+This repo includes prediction files for **Games 1 through 7** of the 2025 Eastern Conference Finals between the New York Knicks and Indiana Pacers.
+
+Each `.py` file:
+- Pulls updated game stats via [`nba_api`](https://github.com/swar/nba_api)
+- Computes rolling team averages over the last `n` games (FG%, REB, AST, STL, etc.)
+- Trains a `RandomForestClassifier` model per team based on win history
+- Outputs **normalized win probabilities** for each game
+- Includes visualizations (in select files) to track momentum shifts and key stat trends
 
 ---
 
 ## 🧠 Why I Built This
 
-As a longtime Knicks fan and data science grad student, I wanted a way to explore:
-- **How recent team stats reflect performance under pressure**
-- **Whether machine learning can give fans a smarter edge to reduce playoff heartbreak**
-
+As a Knicks fan and a grad student studying computer science, I wanted to combine my:
+- Curiosity around **stat-driven performance under pressure**
+- Passion for **sports analytics**
+- Personal need to emotionally prepare using predictive modeling 
 
 ---
-
 
 ## 🔮 How It Works
 
-Each file predicts the outcome of one game. Just run in it in your own terminal!
+Each game prediction script:
+1. Pulls season stats for each team
+2. Filters for games after the season start (e.g., `2024-10-21`)
+3. Calculates recent game averages over the last 18 games
+4. Trains a `RandomForestClassifier` on historical win data
+5. Predicts each team's win probability and normalizes results
+6. A few plots relevant statistical trends using `matplotlib` or `seaborn`
+
+---
+## 📊 Game Predictions: 2025 Eastern Conference Finals
+
+
+| Game | Knicks Win % | Pacers Win % | Predicted Winner | Actual Outcome | Prediction Accuracy |
+|------|--------------|---------------|------------------|----------------|---------------------|
+| 1    | 49.73%       | 50.27%        | Pacers           | Pacers         | ✅                  |
+| 2    | 48.65%       | 51.35%        | Pacers           | Pacers         | ✅                  |
+| 3    | 47.85%       | 52.15%        | Pacers           | Knicks         | ❌                  |
+| 4    | 48.13%       | 51.87%        | Pacers           | Pacers         | ✅                  |
+| 5    | 48.39%       | 51.61%        | Pacers           | Knicks         | ❌                  |
+| 6    | 49.20%       | 50.80%        | Pacers           | Pacers         | ✅                  |
+| 7    | 49.46%       | 50.54%        | Pacers           | *Not Played*   | —                   |
+
+
+
+**Overall Model Accuracy:** 4 correct predictions out of 6 games  
+🎯 **Prediction Accuracy:** **66.7%**
+
+The model correctly predicted Games 1, 2, 4, and 6, proving surprisingly reliable under high-pressure playoff conditions. While Game 7 was never played, its prediction was still generated for completeness and fun.
+
 
 ---
 
-## 🔮 Game 1 Eastern Conference Finals Predicton
+## 📊 Visuals (in select files)
 
-  🗽 New York Knicks chance of winning: 49.733%  
-  🟡 Indiana Pacers chance of winning: 50.267%
+- FG% and 3PT% over recent games
+- Turnovers, Assists, and Rebounds
+- Plus/Minus metrics for momentum analysis
 
-
----
-
-
-## 📈Plus, you'll get graphs like:
-
-- FG% and 3PT% over time
-- Rebounding and assists
-- Turnovers, steals, and blocks
-- Plus/Minus (momentum indicator)
-
+> **Note:** Not every script includes plots — this is a future improvement area.
 
 ---
-
 
 ## ⚙️ Tech Stack
 
-  - Python 
-  - nba_api for game data
-  - scikit-learn for model building
-  - pandas / numpy for data wrangling
-  - matplotlib / seaborn for visualizations
-
+- Python  
+- [`nba_api`](https://github.com/swar/nba_api) for pulling game stats  
+- `pandas`, `numpy` for data wrangling  
+- `scikit-learn` for modeling  
+- `matplotlib`, `seaborn` for visualization  
 
 ---
 
-
 ## 📌 Future Goals
 
-- Add more matchups and playoff games
-- Build a Tableau dashboard to let users interactively explore win predictions and stat trends
-- Experiment with player-level stats (injuries, starters, etc.)
-- Add Monte Carlo simulations for series predictions
+- Add a **Tableau** dashboard to interactively explore predictions    
+- Include **player-level data** and injury reports  
+- Simulate full **finals brackets** using Monte Carlo simulations  
+
